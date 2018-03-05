@@ -38,10 +38,7 @@ var stream = Kefir.withInterval(1000, emitter => {
 });
 stream.log();
 
-var refreshAttention = function(data) {
-    console.log('data:');
-    console.dir(data);
-    console.log(data._source._buffers[3][0]);
+var refreshAttention = function(data){
     if (data._source._buffers[3][0]) {
         if (data._source._buffers[3][0]["attention"]) {
             console.log('attention found');
@@ -52,10 +49,10 @@ var refreshAttention = function(data) {
                 console.log('attention reading:');
                 console.log(attention);
             }
-            // drawCubes(geometry, attention);
+		// drawCubes(geometry, attention);
+        } else{
+        	console.log('ERR: refreshAttention(data), data not found ');
         }
-    } else {
-        console.log('ERR: refreshAttention(data), data not found ');
     }
     if (data._source._buffers[3][0]) {
         if (data._source._buffers[3][0]["meditation"]) {
@@ -67,16 +64,16 @@ var refreshAttention = function(data) {
                 console.log('meditation reading:');
                 console.log(meditation);
             }
-            // drawCubes(geometry, attention);
+		// drawCubes(geometry, attention);
+        } else{
+        	console.log('ERR: refreshAttention(data), data not found ');
         }
-    } else {
-        console.log('ERR: refreshAttention(data), data not found ');
-    }
+    }    
 }
 
-function refreshFrontEnd() {
-    drawCubes(geometry, attention);
-    console.log('refreshFrontEnd running');
+function refreshFrontEnd(){
+	drawCubes(geometry, attention);
+	console.log('refreshFrontEnd running');
 }
 
 socket.on('data', refreshAttention);
