@@ -2,12 +2,12 @@
 Link your attention level to 3D boxes
 
 ### requirements
-MacOS | Python3
+MacOS | Python3 | Mindwave Mobile Headset
 
 ### install dependencies
 ```yarn```
 
-### connect your mindwave mobile to your computer 
+### connect your mindwave mobile to your computer via bluetooth
 
 ### run app
 open 2 terminals into the root of the app
